@@ -1,26 +1,29 @@
-const fname = document.getElementById("fname").value;
-const lname = document.getElementById("lname").value;
-const email = document.getElementById("email").value;
-const pwd = document.getElementById("pwd").value;
-let pwdfField = document.getElementById("pwd");
+const fname = document.getElementById("fn").value;
+const lname = document.getElementById("ln").value;
+const email = document.getElementById("mail").value;
+const pass = document.getElementById("pass").value;
+const pwdfField = document.getElementById("pass");
 const alert = document.getElementById("alert");
 const gen = document.getElementById("gen");
 const success = document.getElementById("success");
 
+
 gen.addEventListener("click", getPassword);
 submit.addEventListener("click", handleSubmit);
 
+function handleSubmit() {
+
+    if (validatePassword(pass) == true) {
+        console.log(fn.value);
+        console.log(document.getElementById("pass").value);
+      success.style.display = "block";
+    } else {
+      alert.style.display = "block";
+    }
+  }
+
 function getPassword() {
   pwdfField.value = generatePassword();
-}
-
-function handleSubmit() {
-  let isValid = validatePassword(pwd);
-  if (isValid) {
-    success.style.display = "block";
-  } else {
-    alert.style.display = "block";
-  }
 }
 
 /* To Generate the password*/
@@ -41,8 +44,8 @@ function generatePassword() {
 }
 
 /* To Validate the password*/
-function validatePassword(password) {
-  if (password.includes(fname) || password.includes(lname)) {
+function validatePassword() {
+  if (pass.includes(fname) || pass.includes(lname)) {
     return false;
   } else return true;
 }
