@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Gen</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <body>
+        <h2 id="success">Registration Successful!</h2>
+        <div class="auth-card">
+          <div class="form">
+            <p id="alert" onclick="alert()">Password must not include first or last name</p>
+            <form>
+              <label for="fname">First name:</label>
+              <input id="fname" placeholder="e.g Jane" type="text" required>
+              <label for="lname">Last name:</label>
+              <input id="lname" placeholder="e.g. Doe" type="text" required>
+              <label>Email:</label>
+              <input placeholder="e.g.janedoe@gmail.com" type="email" id="email" required>
+              <label for="password">Password:</label>
+              <input type="text" placeholder="enter password or auto-generate password" id="pwd" required>
+              <button type="button" class="auto" id="gen">Auto-generate password</button>
+              <span class="submit" id="submit">Submit</span>
+            </form>
+          </div>
+          <div class="side-pic">
+            <img src="https://secure-password-generator.com/wp-content/uploads/2021/08/Password-Generator-Security-Quick-Tips-1.png" alt="security pic">
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="./app.js"></script>
+</body>
+</html>

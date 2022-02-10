@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+  }
+  #success {
+    text-align: center;
+    color: green;
+    display: none;
+  }
+  #alert {
+    color: red;
+    font-size: 1.2rem;
+    text-align: center;
+    display: none;
+  }
+  .auth-card {
+    display: flex;
+    border: 1px solid #ededed;
+    box-shadow: 1px 1px 1px 1px #ededed;
+    border-radius: 5rem;
+    margin: 5rem;
+    padding: 3rem 3rem 3rem 5rem;
+  }
+  .side-pic img {
+    height: 28rem;
+    width: 27rem;
+  }
+  label,
+  input {
+    display: block;
+    margin: 1rem 0;
+  }
+  
+  input {
+    height: 1.4rem;
+    width: 20rem;
+    outline: none;
+    font-size: 1rem;
+    padding: 2px 3px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+  }
+  
+  .auto,
+  .submit {
+    border: none;
+    background-color: #1f3c88;
+    color: #fff;
+    padding: 5px 6px;
+    border-radius: 3px;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  
+  .auto:hover {
+    cursor: pointer;
+    background-color: #2e4c6d;
+  }
+  
+  .submit {
+    background-color: #ea5c2b;
+    text-align: center;
+    width: 5rem;
+  }
+  
+  .submit:hover {
+    cursor: pointer;
+    background-color: #ff7f3f;
+  }
+  @media only screen and (max-width: 1026px) {
+    .auth-card {
+      padding-left: 3rem;
+    }
+  
+    .side-pic img {
+      height: 29rem;
+      width: 26rem;
+    }
+  }
+  @media only screen and (max-width: 980px) {
+    .side-pic img {
+      height: 29rem;
+      width: 21rem;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .side-pic {
+      display: none;
+    }
+    #alert {
+      color: #fff;
+      background-color: #950101;
+    }
+  
+    input {
+      width: 100%;
+      height: 1.6rem;
+    }
+    .auth-card {
+      background-color: #2e4c6d;
+      padding: 5rem;
+      display: block;
+    }
+    .auto {
+      border: 3px solid white;
+      background-color: transparent;
+      letter-spacing: 1px;
+    }
+    .submit,
+    .submit:hover {
+      border: 3px solid #ea5c2b;
+      background-color: transparent;
+      letter-spacing: 1px;
+      color: #ea5c2b;
+    }
+  
+    body {
+      color: #fff;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .auth-card {
+      margin: 1rem 2rem;
+      padding: 2rem 2rem 2rem 5rem;
+    }
+    body {
+      font-size: 1rem;
+    }
+    input {
+      width: 80%;
+      height: 1.4rem;
+      font-size: 0.9rem;
+    }
+  }
+  @media only screen and (max-width: 420px) {
+    .auth-card {
+      padding-left: 3rem;
+    }
+  }
+  
