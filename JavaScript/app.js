@@ -40,7 +40,7 @@ function generatePassword() {
 
     password += randomNumber + lowerCaseLetter + upperCaseLetter + specialChar;
   }
-  return password;
+  return shuffle(password);
 }
 
 /* To Validate the password*/
@@ -48,4 +48,18 @@ function validatePassword() {
   if (pass.includes(fname) || pass.includes(lname)) {
     return false;
   } else return true;
+}
+
+function shuffle(str){
+    let arr = str.split("");
+    let n = arr.length;
+
+    for(let i = 0; i< n; i++){
+        let j = Math.floor(Math.random() * n);
+
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr.join("");
 }
