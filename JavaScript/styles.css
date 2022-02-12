@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: cursive;
   }
-  #alert, #alert2{
+  #alert{
     color: red;
     font-size: .9rem;
     text-align: center;
@@ -88,7 +88,7 @@ body {
     .side-pic {
       display: none;
     }
-    #alert, #alert2 {
+    #alert {
       color: #fff;
       background-color: #950101;
     }

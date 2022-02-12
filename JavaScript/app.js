@@ -3,17 +3,21 @@ const lname = document.getElementById("ln");
 const email = document.getElementById("mail");
 const pwd = document.getElementById("pass");
 const formAlert = document.getElementById("alert");
-const formAlert2 = document.getElementById("alert2");
 const gen = document.getElementById("gen");
 const form = document.getElementById("submit");
 
 gen.addEventListener("click", getPassword);
 
 function handleSubmit() {
-  if (validatePassword(pwd.value, fname.value, lname.value) == false) {
+    if (pwd.value == "" || fname.value == "" || lname.value == "" || email.value == ""){
+        formAlert.style.display = "block";
+        formAlert.innerHTML = "All fields are required";
+        return false;
+    }
+    else if (validatePassword(pwd.value, fname.value, lname.value) == false) {
     return false;
-  }
-  return true;
+    }
+    return true;
 }
 
 function getPassword() {
@@ -56,7 +60,7 @@ function shuffle(str) {
 function validatePassword(password, fname, lname) {
   if (password.includes(fname) || password.includes(lname)) {
     formAlert.style.display = "block";
-    formAlert2.style.display = "none";
+    formAlert.innerHTML = "Password must not include first or last name";
     return false;
   } else if (
     !/\d/.test(password) ||
@@ -64,8 +68,8 @@ function validatePassword(password, fname, lname) {
     !/[A-Z]/.test(password) ||
     !/[%!@#$^&*-+=|\\(){}:\"';,?]/.test(password)
   ) {
-    formAlert2.style.display = "block";
-    formAlert.style.display = "none";
+    formAlert.style.display = "block";
+    formAlert.innerHTML = "Password must be a mix of letters, numbers, and special symbols";
     return false;
   } else return true;
 }
