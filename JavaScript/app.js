@@ -4,20 +4,13 @@ const email = document.getElementById("mail");
 const pwd = document.getElementById("pass");
 const alert = document.getElementById("alert");
 const gen = document.getElementById("gen");
-const success = document.getElementById("success");
-const prompt = document.getElementById("prompt");
+const form = document.getElementById("signupForm");
 
 gen.addEventListener("click", getPassword);
-submit.addEventListener("click", handleSubmit);
+form.addEventListener("submit", handleSubmit);
 
 function handleSubmit() {
-  if (pwd.value == "" || fname.value == "" || lname.value == "") {
-    prompt.style.display = "block";
-  } else if (validatePassword(pwd.value, fname.value, lname.value) === true) {
-    success.style.display = "block";
-  } else {
-    alert.style.display = "block";
-  }
+    validatePassword(pwd.value, fname.value, lname.value)
 }
 
 function getPassword() {
@@ -43,10 +36,13 @@ function generatePassword() {
 
 /* To Validate the password*/
 function validatePassword(password, fname, lname) {
-  if (password.includes(fname) || password.includes(lname)) {
-    return false;
-  } else return true;
-}
+    if (password.includes(fname) || password.includes(lname)) 
+        return false;
+    else if( !(/\d/.test(password)) || !(/[a-z]/.test(password)) || !(/[A-Z]/.test(password)) || !(/[%!@#$^&*-+=|\\(){}:\"';,?]/.test(password)) )
+        return false;
+    else
+        return true;
+  } 
 
 /* To shuffle the password string*/
 function shuffle(str) {

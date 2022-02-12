@@ -3,13 +3,7 @@ body {
     padding: 0;
     font-family: cursive;
   }
-  #success {
-    text-align: center;
-    color: green;
-    display: none;
-  }
-  #alert,
-  #prompt {
+  #alert{
     color: red;
     font-size: 1.2rem;
     text-align: center;
@@ -22,7 +16,9 @@ body {
     border-radius: 5rem;
     margin: 5rem;
     padding: 3rem 3rem 3rem 5rem;
+    justify-content: space-around;
   }
+  
   .side-pic img {
     height: 28rem;
     width: 27rem;
@@ -92,8 +88,7 @@ body {
     .side-pic {
       display: none;
     }
-    #alert,
-    #prompt {
+    #alert {
       color: #fff;
       background-color: #950101;
     }

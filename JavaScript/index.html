@@ -8,22 +8,20 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h2 id="success">Registration Successful!</h2>
     <div class="auth-card">
       <div class="form">
         <p id="alert">Password must not include first or last name</p>
-        <p id="prompt">All fields are required</p>
-        <form>
+        <form action="https://formspree.io/f/xvolaoaz" method="POST" name="signupForm" id="signupForm">
           <label for="fname">First name:</label>
-          <input id="fn" placeholder="e.g Jane" type="text" required>
+          <input id="fn" name="fname" placeholder="e.g Jane" type="text" required>
           <label for="lname">Last name:</label>
-          <input id="ln" placeholder="e.g. Doe" type="text" required>
+          <input id="ln" name="lname" placeholder="e.g. Doe" type="text" required>
           <label>Email:</label>
-          <input placeholder="e.g.janedoe@gmail.com" type="email" id="mail" required>
+          <input placeholder="e.g.janedoe@gmail.com" name="email" type="email" id="mail" required>
           <label for="password">Password:</label>
-          <input type="text" placeholder="enter password or auto-generate password" id="pass" required>
+          <input type="text" name="password" placeholder="enter password or auto-generate password" minlength="8" id="pass" required>
           <button type="button" class="auto" id="gen">Auto-generate password</button>
-          <button class="submit" type="button" id="submit">Submit</button>
+          <button class="submit" type="submit" id="submit">Submit</button>
         </form>
       </div>
       <div class="side-pic">
