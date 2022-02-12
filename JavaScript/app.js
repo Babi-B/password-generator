@@ -24,6 +24,14 @@ function getPassword() {
   pwd.value = generatePassword();
 }
 
+/* To toggle password visibility*/
+function pwdToggle(){
+  if(pwd.type == "text")
+    pwd.type = "password";
+  else
+  pwd.type = "text";
+}
+
 /* To Generate the password*/
 function generatePassword() {
   let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

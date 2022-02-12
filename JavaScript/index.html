@@ -12,17 +12,18 @@
       <div class="form">
         <p id="alert"></p>
         <form action="https://formspree.io/f/xvolaoaz" method="POST" name="signupForm" id="signupForm">
-          <label for="fname">First name:</label>
+          <label for="fname">First name <span class="star">*</span>:</label>
           <input id="fn" name="fname" placeholder="e.g Jane" type="text" required>
-          <label for="lname">Last name:</label>
+          <label for="lname">Last name<span class="star">*</span>:</label>
           <input id="ln" name="lname" placeholder="e.g. Doe" type="text" required>
-          <label>Email:</label>
+          <label>Email<span class="star">*</span>:</label>
           <input placeholder="e.g.janedoe@gmail.com" name="email" type="email" id="mail" required>
-          <label for="password">Password:</label>
-          <input type="text" name="password" placeholder="enter password or auto-generate password" minlength="8" id="pass" required>
+          <label for="password">Password<span class="star">*</span>:</label>
+          <input type="password" name="password" placeholder="enter password or auto-generate password" minlength="8" id="pass" required>
           <button type="button" class="auto" id="gen">Auto-generate password</button>
           <button class="submit" type="submit" id="submit" onclick="return handleSubmit()">Submit</button>
         </form>
+        <input type="checkbox" id="checkbox" onclick="pwdToggle()"><label class="showPass">Show Password</label>
       </div>
       <div class="side-pic">
         <img src="https://secure-password-generator.com/wp-content/uploads/2021/08/Password-Generator-Security-Quick-Tips-1.png" alt="security pic">
