@@ -2,15 +2,18 @@ const fname = document.getElementById("fn");
 const lname = document.getElementById("ln");
 const email = document.getElementById("mail");
 const pwd = document.getElementById("pass");
-const alert = document.getElementById("alert");
+const formAlert = document.getElementById("alert");
+const formAlert2 = document.getElementById("alert2");
 const gen = document.getElementById("gen");
-const form = document.getElementById("signupForm");
+const form = document.getElementById("submit");
 
 gen.addEventListener("click", getPassword);
-form.addEventListener("submit", handleSubmit);
 
 function handleSubmit() {
-    validatePassword(pwd.value, fname.value, lname.value)
+  if (validatePassword(pwd.value, fname.value, lname.value) == false) {
+    return false;
+  }
+  return true;
 }
 
 function getPassword() {
@@ -34,16 +37,6 @@ function generatePassword() {
   return shuffle(password);
 }
 
-/* To Validate the password*/
-function validatePassword(password, fname, lname) {
-    if (password.includes(fname) || password.includes(lname)) 
-        return false;
-    else if( !(/\d/.test(password)) || !(/[a-z]/.test(password)) || !(/[A-Z]/.test(password)) || !(/[%!@#$^&*-+=|\\(){}:\"';,?]/.test(password)) )
-        return false;
-    else
-        return true;
-  } 
-
 /* To shuffle the password string*/
 function shuffle(str) {
   let arr = str.split("");
@@ -57,4 +50,20 @@ function shuffle(str) {
     arr[j] = temp;
   }
   return arr.join("");
+}
+
+/* To Validate the password*/
+function validatePassword(password, fname, lname) {
+  if (password.includes(fname) || password.includes(lname)) {
+    formAlert.style.display = "block";
+    return false;
+  } else if (
+    !/\d/.test(password) ||
+    !/[a-z]/.test(password) ||
+    !/[A-Z]/.test(password) ||
+    !/[%!@#$^&*-+=|\\(){}:\"';,?]/.test(password)
+  ) {
+    formAlert2.style.display = "block";
+    return false;
+  } else return true;
 }

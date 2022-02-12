@@ -11,6 +11,7 @@
     <div class="auth-card">
       <div class="form">
         <p id="alert">Password must not include first or last name</p>
+        <p id="alert2">Password must be a mix of letters, numbers, and special symbols</p>
         <form action="https://formspree.io/f/xvolaoaz" method="POST" name="signupForm" id="signupForm">
           <label for="fname">First name:</label>
           <input id="fn" name="fname" placeholder="e.g Jane" type="text" required>
@@ -21,7 +22,7 @@
           <label for="password">Password:</label>
           <input type="text" name="password" placeholder="enter password or auto-generate password" minlength="8" id="pass" required>
           <button type="button" class="auto" id="gen">Auto-generate password</button>
-          <button class="submit" type="submit" id="submit">Submit</button>
+          <button class="submit" type="submit" id="submit" onclick="return handleSubmit()">Submit</button>
         </form>
       </div>
       <div class="side-pic">
@@ -31,5 +32,5 @@
   
     <!-- JavaScript -->
     <script src="./app.js"></script>
-  </body>    
+  </body>
 </html>
