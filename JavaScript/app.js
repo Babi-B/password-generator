@@ -56,6 +56,7 @@ function shuffle(str) {
 function validatePassword(password, fname, lname) {
   if (password.includes(fname) || password.includes(lname)) {
     formAlert.style.display = "block";
+    formAlert2.style.display = "none";
     return false;
   } else if (
     !/\d/.test(password) ||
@@ -64,6 +65,7 @@ function validatePassword(password, fname, lname) {
     !/[%!@#$^&*-+=|\\(){}:\"';,?]/.test(password)
   ) {
     formAlert2.style.display = "block";
+    formAlert.style.display = "none";
     return false;
   } else return true;
 }
