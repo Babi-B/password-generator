@@ -1,21 +1,21 @@
-const fname = document.getElementById("fn").value;
-const lname = document.getElementById("ln").value;
-const email = document.getElementById("mail").value;
-const pass = document.getElementById("pass").value;
-const pwdfField = document.getElementById("pass");
+const fname = document.getElementById("fn");
+const lname = document.getElementById("ln");
+const email = document.getElementById("mail");
+const pwd = document.getElementById("pass");
 const alert = document.getElementById("alert");
 const gen = document.getElementById("gen");
 const success = document.getElementById("success");
+const prompt = document.getElementById("prompt");
 
 
 gen.addEventListener("click", getPassword);
 submit.addEventListener("click", handleSubmit);
 
 function handleSubmit() {
-
-    if (validatePassword(pass) == true) {
-        console.log(fn.value);
-        console.log(document.getElementById("pass").value);
+    console.log("".length)
+    if(pwd.value == "" || fname.value == "" || lname.value == ""){
+        prompt.style.display = "block";
+     }else if (validatePassword(pwd.value, fname.value, lname.value) === true) {
       success.style.display = "block";
     } else {
       alert.style.display = "block";
@@ -23,7 +23,7 @@ function handleSubmit() {
   }
 
 function getPassword() {
-  pwdfField.value = generatePassword();
+  pwd.value = generatePassword();
 }
 
 /* To Generate the password*/
@@ -44,12 +44,14 @@ function generatePassword() {
 }
 
 /* To Validate the password*/
-function validatePassword() {
-  if (pass.includes(fname) || pass.includes(lname)) {
+function validatePassword(password, fname, lname) {
+  if (password.includes(fname) || password.includes(lname)) {
     return false;
   } else return true;
 }
 
+
+/* To shuffle the password string*/
 function shuffle(str){
     let arr = str.split("");
     let n = arr.length;
