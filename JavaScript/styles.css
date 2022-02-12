@@ -8,7 +8,8 @@ body {
     color: green;
     display: none;
   }
-  #alert,#prompt {
+  #alert,
+  #prompt {
     color: red;
     font-size: 1.2rem;
     text-align: center;
@@ -91,7 +92,8 @@ body {
     .side-pic {
       display: none;
     }
-    #alert,#prompt {
+    #alert,
+    #prompt {
       color: #fff;
       background-color: #950101;
     }

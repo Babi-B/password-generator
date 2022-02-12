@@ -7,20 +7,19 @@ const gen = document.getElementById("gen");
 const success = document.getElementById("success");
 const prompt = document.getElementById("prompt");
 
-
 gen.addEventListener("click", getPassword);
 submit.addEventListener("click", handleSubmit);
 
 function handleSubmit() {
-    console.log("".length)
-    if(pwd.value == "" || fname.value == "" || lname.value == ""){
-        prompt.style.display = "block";
-     }else if (validatePassword(pwd.value, fname.value, lname.value) === true) {
-      success.style.display = "block";
-    } else {
-      alert.style.display = "block";
-    }
+  console.log("".length);
+  if (pwd.value == "" || fname.value == "" || lname.value == "") {
+    prompt.style.display = "block";
+  } else if (validatePassword(pwd.value, fname.value, lname.value) === true) {
+    success.style.display = "block";
+  } else {
+    alert.style.display = "block";
   }
+}
 
 function getPassword() {
   pwd.value = generatePassword();
@@ -50,18 +49,17 @@ function validatePassword(password, fname, lname) {
   } else return true;
 }
 
-
 /* To shuffle the password string*/
-function shuffle(str){
-    let arr = str.split("");
-    let n = arr.length;
+function shuffle(str) {
+  let arr = str.split("");
+  let n = arr.length;
 
-    for(let i = 0; i< n; i++){
-        let j = Math.floor(Math.random() * n);
+  for (let i = 0; i < n; i++) {
+    let j = Math.floor(Math.random() * n);
 
-        let temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-    return arr.join("");
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+  }
+  return arr.join("");
 }
