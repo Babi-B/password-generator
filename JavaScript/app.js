@@ -11,7 +11,6 @@ gen.addEventListener("click", getPassword);
 submit.addEventListener("click", handleSubmit);
 
 function handleSubmit() {
-  console.log("".length);
   if (pwd.value == "" || fname.value == "" || lname.value == "") {
     prompt.style.display = "block";
   } else if (validatePassword(pwd.value, fname.value, lname.value) === true) {
